@@ -1,0 +1,32 @@
+team_name: "Your Team Name"
+primary_contact:
+  name: "Your Name"
+  email: "your@email.com"
+  phone: "+91-XXXXXXXXXX"
+
+github_repo: "https://github.com/YOUR_USERNAME/redrob-ranker"
+sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+reproduce_command: "python rank.py candidates.jsonl submission.csv"
+
+compute:
+  platform: "Your Computer Type"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.12"
+  os: "Windows/Mac/Linux"
+
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: "Used Claude to help design the ranking algorithm and code structure."
+
+methodology_summary: |
+  Five-component ranking system that scores candidates on title match, 
+  skills, experience, education, and behavioral signals. The system 
+  filters out impossible profiles (honeypots) to ensure quality results.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  reproduction_tested: true
