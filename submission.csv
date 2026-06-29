@@ -1,0 +1,101 @@
+candidate_id,rank,score,reasoning
+CAND_0039754,1,0.911971,Title: Senior Applied Scientist; 20 skills; 16.2yr
+CAND_0081846,2,0.888262,Title: Lead AI Engineer; 18 skills; 6.7yr
+CAND_0055905,3,0.885554,Title: Senior Machine Learning Engineer; 13 skills; 8.1yr
+CAND_0055992,4,0.876613,Title: AI Engineer; 16 skills; 16.9yr
+CAND_0070398,5,0.867196,Title: Machine Learning Engineer; 16 skills; 7.2yr
+CAND_0088025,6,0.866238,Title: Staff Machine Learning Engineer; 19 skills; 8.6yr
+CAND_0035301,7,0.863225,Title: Business Analyst; 17 skills; 12.6yr
+CAND_0059017,8,0.856133,Title: AI Research Engineer; 14 skills; 6.8yr
+CAND_0091275,9,0.854771,Title: Mechanical Engineer; 23 skills; 9.7yr
+CAND_0035292,10,0.854762,Title: Customer Support; 18 skills; 13.7yr
+CAND_0095619,11,0.852775,Title: NLP Engineer; 17 skills; 15.6yr
+CAND_0032147,12,0.851733,Title: Accountant; 15 skills; 8.2yr
+CAND_0080766,13,0.850083,Title: Staff Machine Learning Engineer; 21 skills; 8.8yr
+CAND_0052682,14,0.847525,Title: NLP Engineer; 15 skills; 6.6yr
+CAND_0073265,15,0.846779,Title: Sales Executive; 20 skills; 11.4yr
+CAND_0034605,16,0.846062,Title: HR Manager; 18 skills; 12.1yr
+CAND_0086022,17,0.845662,Title: Senior Applied Scientist; 19 skills; 5.3yr
+CAND_0071974,18,0.845329,Title: Senior AI Engineer; 19 skills; 7.8yr
+CAND_0061257,19,0.840112,Title: Staff Machine Learning Engineer; 16 skills; 8.0yr
+CAND_0007411,20,0.839921,Title: Senior Machine Learning Engineer; 14 skills; 8.0yr
+CAND_0002025,21,0.839842,Title: Senior AI Engineer; 20 skills; 5.9yr
+CAND_0010770,22,0.839512,Title: Recommendation Systems Engineer; 18 skills; 15.2yr
+CAND_0042673,23,0.839463,Title: Civil Engineer; 18 skills; 10.0yr
+CAND_0050334,24,0.838050,Title: Accountant; 17 skills; 13.8yr
+CAND_0077420,25,0.837808,Title: Civil Engineer; 22 skills; 14.8yr
+CAND_0073287,26,0.834733,Title: Civil Engineer; 21 skills; 12.8yr
+CAND_0063541,27,0.834150,Title: Project Manager; 19 skills; 11.0yr
+CAND_0090492,28,0.833513,Title: Operations Manager; 19 skills; 9.4yr
+CAND_0069795,29,0.833067,Title: Mechanical Engineer; 19 skills; 12.8yr
+CAND_0004911,30,0.832717,Title: Marketing Manager; 23 skills; 13.9yr
+CAND_0018120,31,0.832525,Title: Civil Engineer; 18 skills; 11.7yr
+CAND_0008425,32,0.830367,Title: Senior NLP Engineer; 17 skills; 7.8yr
+CAND_0001238,33,0.829929,Title: Content Writer; 21 skills; 9.1yr
+CAND_0008315,34,0.829258,Title: Sales Executive; 17 skills; 12.7yr
+CAND_0093193,35,0.828933,Title: Senior Machine Learning Engineer; 19 skills; 7.9yr
+CAND_0049485,36,0.828867,Title: Content Writer; 21 skills; 14.6yr
+CAND_0071115,37,0.827675,Title: Recommendation Systems Engineer; 14 skills; 16.5yr
+CAND_0066649,38,0.827283,Title: Customer Support; 17 skills; 10.0yr
+CAND_0013749,39,0.827117,Title: Mechanical Engineer; 17 skills; 14.6yr
+CAND_0068351,40,0.826854,Title: Lead AI Engineer; 19 skills; 6.4yr
+CAND_0017960,41,0.826829,Title: Recommendation Systems Engineer; 14 skills; 7.7yr
+CAND_0046525,42,0.826550,Title: Senior Machine Learning Engineer; 17 skills; 6.1yr
+CAND_0036561,43,0.826417,Title: Graphic Designer; 18 skills; 12.1yr
+CAND_0024478,44,0.826238,Title: Content Writer; 20 skills; 11.9yr
+CAND_0043534,45,0.825367,Title: Marketing Manager; 21 skills; 13.0yr
+CAND_0042410,46,0.825275,Title: Content Writer; 18 skills; 9.0yr
+CAND_0011687,47,0.825212,Title: Senior NLP Engineer; 13 skills; 7.8yr
+CAND_0046064,48,0.824154,Title: Senior NLP Engineer; 16 skills; 8.9yr
+CAND_0077337,49,0.824017,Title: Staff Machine Learning Engineer; 20 skills; 7.0yr
+CAND_0016163,50,0.823063,Title: Applied ML Engineer; 17 skills; 6.7yr
+CAND_0058688,51,0.821733,Title: AI Engineer; 17 skills; 6.7yr
+CAND_0048167,52,0.820958,Title: Accountant; 17 skills; 13.6yr
+CAND_0080068,53,0.820937,Title: Project Manager; 15 skills; 11.9yr
+CAND_0012656,54,0.820204,Title: HR Manager; 17 skills; 14.5yr
+CAND_0033243,55,0.819792,Title: Mechanical Engineer; 22 skills; 10.6yr
+CAND_0084372,56,0.819771,Title: Graphic Designer; 19 skills; 14.9yr
+CAND_0041895,57,0.819446,Title: Civil Engineer; 18 skills; 8.9yr
+CAND_0064888,58,0.819400,Title: ML Engineer; 13 skills; 5.8yr
+CAND_0063224,59,0.819208,Title: Accountant; 17 skills; 10.1yr
+CAND_0037980,60,0.818779,Title: Senior Applied Scientist; 21 skills; 9.0yr
+CAND_0094953,61,0.818775,Title: QA Engineer; 12 skills; 9.6yr
+CAND_0024091,62,0.818487,Title: Sales Executive; 20 skills; 13.8yr
+CAND_0007009,63,0.818467,Title: Recommendation Systems Engineer; 18 skills; 7.9yr
+CAND_0005649,64,0.818050,Title: Senior Data Scientist; 17 skills; 7.4yr
+CAND_0072729,65,0.817983,Title: Marketing Manager; 16 skills; 13.7yr
+CAND_0031837,66,0.817950,Title: Graphic Designer; 20 skills; 10.8yr
+CAND_0008799,67,0.817133,Title: Content Writer; 14 skills; 10.7yr
+CAND_0018066,68,0.817021,Title: Sales Executive; 17 skills; 12.9yr
+CAND_0044222,69,0.816737,Title: AI Engineer; 19 skills; 7.7yr
+CAND_0005851,70,0.816617,Title: Content Writer; 21 skills; 12.8yr
+CAND_0065878,71,0.816217,Title: Senior Data Scientist; 15 skills; 7.8yr
+CAND_0013611,72,0.816033,Title: Accountant; 16 skills; 12.6yr
+CAND_0088068,73,0.815871,Title: Accountant; 17 skills; 9.2yr
+CAND_0076167,74,0.815679,Title: Customer Support; 17 skills; 14.3yr
+CAND_0089198,75,0.815600,Title: Full Stack Developer; 16 skills; 8.6yr
+CAND_0032844,76,0.815475,Title: Civil Engineer; 18 skills; 12.4yr
+CAND_0012279,77,0.815471,Title: Graphic Designer; 19 skills; 9.0yr
+CAND_0002005,78,0.815108,Title: Sales Executive; 16 skills; 11.3yr
+CAND_0040871,79,0.815071,Title: Mechanical Engineer; 23 skills; 9.2yr
+CAND_0038827,80,0.814933,Title: Marketing Manager; 18 skills; 10.2yr
+CAND_0028058,81,0.814633,Title: Customer Support; 23 skills; 14.0yr
+CAND_0026245,82,0.814188,Title: Content Writer; 20 skills; 14.5yr
+CAND_0002451,83,0.813921,Title: Civil Engineer; 17 skills; 12.6yr
+CAND_0079789,84,0.813775,Title: Accountant; 18 skills; 11.7yr
+CAND_0093282,85,0.813763,Title: Customer Support; 17 skills; 14.2yr
+CAND_0047068,86,0.813758,Title: Civil Engineer; 17 skills; 9.5yr
+CAND_0092941,87,0.813738,Title: Civil Engineer; 20 skills; 14.4yr
+CAND_0042934,88,0.813567,Title: Civil Engineer; 15 skills; 12.0yr
+CAND_0045258,89,0.812804,Title: HR Manager; 17 skills; 14.9yr
+CAND_0085108,90,0.812783,Title: Customer Support; 13 skills; 9.5yr
+CAND_0055838,91,0.812742,Title: Graphic Designer; 21 skills; 12.0yr
+CAND_0017706,92,0.812404,Title: Sales Executive; 17 skills; 8.9yr
+CAND_0064633,93,0.812325,Title: Civil Engineer; 19 skills; 10.7yr
+CAND_0018499,94,0.812125,Title: Senior Machine Learning Engineer; 17 skills; 7.2yr
+CAND_0047639,95,0.811879,Title: Graphic Designer; 16 skills; 9.5yr
+CAND_0003791,96,0.811742,Title: ML Engineer; 17 skills; 6.6yr
+CAND_0061088,97,0.811512,Title: Customer Support; 18 skills; 11.1yr
+CAND_0032764,98,0.810238,Title: Customer Support; 14 skills; 9.5yr
+CAND_0077956,99,0.810000,Title: Computer Vision Engineer; 18 skills; 6.4yr
+CAND_0059294,100,0.809958,Title: Sales Executive; 20 skills; 13.0yr
