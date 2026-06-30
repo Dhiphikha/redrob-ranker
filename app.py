@@ -18,7 +18,7 @@ st.subheader("📁 Option 1: Upload Your Own Candidates File")
 uploaded_file = st.file_uploader("Upload candidates JSON/JSONL file", type=['json', 'jsonl'])
 
 # Option 2: Use repository file
-st.subheader("📁 Option 2: Use Full Dataset (487MB)")
+st.subheader("📁 Option 2: Use Full Dataset (500MB)")
 
 if st.button("🚀 Rank Full Dataset (candidates.jsonl)"):
     if os.path.exists("candidates.jsonl"):
