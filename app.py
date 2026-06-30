@@ -3,73 +3,61 @@ import subprocess
 import pandas as pd
 import os
 
-st.set_page_config(page_title="Redrob Candidate Ranking System", layout="wide")
-
 st.title("Redrob Candidate Ranking System")
 
 st.write("""
-This sandbox demonstrates the candidate ranking system for the Senior AI Engineer role.
-Upload a sample candidates file to see the ranking in action.
+This sandbox demonstrates the candidate ranking system for Senior AI Engineer role.
+Upload a sample candidates file to see ranking in action.
 """)
 
-# File Upload
-uploaded_file = st.file_uploader(
-    "Upload candidates JSON/JSONL file",
-    type=["json", "jsonl"]
-)
+# File upload
+uploaded_file = st.file_uploader("Upload candidates JSON file", type=['json', 'jsonl'])
 
-if uploaded_file is not None:
-
+if uploaded_file:
     # Save uploaded file
-    input_file = "candidates_sample.jsonl"
-
-    with open(input_file, "wb") as f:
+    with open("candidates_sample.jsonl", "wb") as f:
         f.write(uploaded_file.getbuffer())
-
+    
     st.success(f"✅ Uploaded {uploaded_file.name}")
-
+    
     if st.button("Run Ranking"):
-
-        with st.spinner("Ranking candidates..."):
-
+        with st.spinner("Ranking candidates (this takes a few seconds)..."):
+            # Run the ranking script
             result = subprocess.run(
-                ["python", "rank.py", input_file, "output.csv"],
+                ["python", "rank.py", "candidates_sample.jsonl", "output.csv"],
                 capture_output=True,
-                text=True
+                text=True,
+                timeout=300
             )
-
+        
         if result.returncode == 0:
-
             st.success("✅ Ranking Complete!")
-
+            
+            # Read and display results
             df = pd.read_csv("output.csv")
-
-            st.subheader("Top Ranked Candidates")
-
-            st.dataframe(df, use_container_width=True)
-
+            st.write(f"**Top {len(df)} Candidates:**")
+            st.dataframe(df)
+            
+            # Download button
+            csv_content = open("output.csv").read()
             st.download_button(
-                label="📥 Download Results",
-                data=df.to_csv(index=False),
+                label="Download Results CSV",
+                data=csv_content,
                 file_name="ranking_results.csv",
                 mime="text/csv"
             )
-
         else:
-            st.error(result.stderr)
+            st.error(f"Error: {result.stderr}")
 
-st.divider()
-
-st.subheader("How it Works")
-
-st.markdown("""
-1. Upload a JSON/JSONL file containing candidate profiles.
-2. The system evaluates each candidate based on:
-   - **Title Match (30%)**
-   - **Skills Match (25%)**
-   - **Experience (20%)**
-   - **Education (10%)**
-   - **Behavioral Signals (15%)**
-3. Candidates are ranked by their overall score.
-4. The top-ranked candidates are displayed and can be downloaded as a CSV file.
+st.write("---")
+st.write("**How it works:**")
+st.write("""
+1. Upload a JSON/JSONL file with candidate data
+2. System scores candidates on:
+   - Title Match (30%)
+   - Skills Match (25%)
+   - Experience (20%)
+   - Education (10%)
+   - Behavioral Signals (15%)
+3. Returns top 100 ranked candidates
 """)
