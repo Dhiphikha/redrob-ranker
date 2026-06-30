@@ -46,7 +46,16 @@ if uploaded_file:
                 mime="text/csv"
             )
         else:
-            st.error(f"Error: {result.stderr}")
+            st.error("Ranking failed!")
+
+st.write("### Return Code")
+st.code(result.returncode)
+
+st.write("### Standard Output")
+st.code(result.stdout)
+
+st.write("### Error Output")
+st.code(result.stderr)
 
 st.write("---")
 st.write("**How it works:**")
