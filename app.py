@@ -27,7 +27,6 @@ if uploaded_file:
                 ["python", "rank.py", "candidates_sample.jsonl", "output.csv"],
                 capture_output=True,
                 text=True,
-                timeout=300
             )
         
         if result.returncode == 0:
