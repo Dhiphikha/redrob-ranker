@@ -1,222 +1,75 @@
 import streamlit as st
-import tempfile
-import hashlib
+import subprocess
+import pandas as pd
 import os
-from pathlib import Path
-from datetime import datetime
 
-# -------------------------
-# PAGE CONFIG
-# -------------------------
-st.set_page_config(
-    page_title="JSON Upload Center",
-    page_icon="📂",
-    layout="wide"
-)
+st.set_page_config(page_title="Redrob Candidate Ranking System", layout="wide")
 
-# -------------------------
-# CSS
-# -------------------------
-st.markdown("""
-<style>
+st.title("Redrob Candidate Ranking System")
 
-.stApp{
-background:#f5f7fb;
-}
+st.write("""
+This sandbox demonstrates the candidate ranking system for the Senior AI Engineer role.
+Upload a sample candidates file to see the ranking in action.
+""")
 
-.main-title{
-font-size:42px;
-font-weight:700;
-text-align:center;
-color:#1e3a8a;
-margin-bottom:0px;
-}
-
-.sub{
-text-align:center;
-color:gray;
-margin-bottom:30px;
-}
-
-.upload-box{
-
-padding:25px;
-
-border-radius:20px;
-
-background:white;
-
-box-shadow:0px 4px 20px rgba(0,0,0,.08);
-
-}
-
-.metric-card{
-
-background:white;
-
-padding:20px;
-
-border-radius:15px;
-
-box-shadow:0px 4px 10px rgba(0,0,0,.08);
-
-}
-
-.footer{
-
-text-align:center;
-
-color:gray;
-
-padding-top:30px;
-
-}
-
-</style>
-""", unsafe_allow_html=True)
-
-# -------------------------
-# TITLE
-# -------------------------
-
-st.markdown(
-    "<div class='main-title'>📂 Professional JSON Upload Portal</div>",
-    unsafe_allow_html=True,
-)
-
-st.markdown(
-    "<div class='sub'>Upload JSON / JSONL files up to <b>1 GB</b></div>",
-    unsafe_allow_html=True,
-)
-
-# -------------------------
-# SIDEBAR
-# -------------------------
-
-with st.sidebar:
-
-    st.header("⚙ System Information")
-
-    st.success("✔ JSON")
-
-    st.success("✔ JSONL")
-
-    st.info("Maximum Supported Size")
-
-    st.metric("", "1 GB")
-
-    st.divider()
-
-    st.write("### Features")
-
-    st.write("✔ Large File Upload")
-
-    st.write("✔ Secure Upload")
-
-    st.write("✔ Hash Verification")
-
-    st.write("✔ Ready for Processing")
-
-# -------------------------
-# UPLOADER
-# -------------------------
-
-st.markdown("<div class='upload-box'>", unsafe_allow_html=True)
-
+# File Upload
 uploaded_file = st.file_uploader(
-    "Upload Candidate File",
-    type=["json", "jsonl"],
-    help="Maximum size : 1 GB"
+    "Upload candidates JSON/JSONL file",
+    type=["json", "jsonl"]
 )
 
-st.markdown("</div>", unsafe_allow_html=True)
+if uploaded_file is not None:
 
-# -------------------------
-# PROCESS
-# -------------------------
+    # Save uploaded file
+    input_file = "candidates_sample.jsonl"
 
-if uploaded_file:
+    with open(input_file, "wb") as f:
+        f.write(uploaded_file.getbuffer())
 
-    size_mb = uploaded_file.size / (1024 * 1024)
+    st.success(f"✅ Uploaded {uploaded_file.name}")
 
-    size_gb = uploaded_file.size / (1024 * 1024 * 1024)
+    if st.button("Run Ranking"):
 
-    # Save file without loading into RAM
-    temp_dir = tempfile.gettempdir()
+        with st.spinner("Ranking candidates..."):
 
-    save_path = os.path.join(temp_dir, uploaded_file.name)
+            result = subprocess.run(
+                ["python", "rank.py", input_file, "output.csv"],
+                capture_output=True,
+                text=True
+            )
 
-    progress = st.progress(0)
+        if result.returncode == 0:
 
-    with open(save_path, "wb") as f:
+            st.success("✅ Ranking Complete!")
 
-        chunk_size = 1024 * 1024
+            df = pd.read_csv("output.csv")
 
-        while True:
+            st.subheader("Top Ranked Candidates")
 
-            chunk = uploaded_file.read(chunk_size)
+            st.dataframe(df, use_container_width=True)
 
-            if not chunk:
-                break
+            st.download_button(
+                label="📥 Download Results",
+                data=df.to_csv(index=False),
+                file_name="ranking_results.csv",
+                mime="text/csv"
+            )
 
-            f.write(chunk)
+        else:
+            st.error(result.stderr)
 
-    progress.progress(100)
+st.divider()
 
-    # Hash
-    hash_md5 = hashlib.md5()
+st.subheader("How it Works")
 
-    with open(save_path, "rb") as f:
-
-        for chunk in iter(lambda: f.read(1024 * 1024), b""):
-
-            hash_md5.update(chunk)
-
-    file_hash = hash_md5.hexdigest()
-
-    st.success("✅ Upload Successful")
-
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        st.metric("File Name", uploaded_file.name)
-
-    with col2:
-        st.metric("Size", f"{size_mb:.2f} MB")
-
-    with col3:
-        st.metric("Extension", Path(uploaded_file.name).suffix)
-
-    st.divider()
-
-    st.write("### File Details")
-
-    st.write("**Saved Path**")
-
-    st.code(save_path)
-
-    st.write("**MD5 Hash**")
-
-    st.code(file_hash)
-
-    st.write("**Upload Time**")
-
-    st.info(datetime.now().strftime("%d %B %Y %H:%M:%S"))
-
-    st.divider()
-
-    if st.button("🚀 Continue Processing", use_container_width=True):
-
-        st.success("File is ready for the next processing step.")
-
-# -------------------------
-# FOOTER
-# -------------------------
-
-st.markdown(
-"""
-<div class='footer'>
-Professional JSON Upload System • Streamlit
-</div>
-""",
-unsafe_allow_html=True)
+st.markdown("""
+1. Upload a JSON/JSONL file containing candidate profiles.
+2. The system evaluates each candidate based on:
+   - **Title Match (30%)**
+   - **Skills Match (25%)**
+   - **Experience (20%)**
+   - **Education (10%)**
+   - **Behavioral Signals (15%)**
+3. Candidates are ranked by their overall score.
+4. The top-ranked candidates are displayed and can be downloaded as a CSV file.
+""")
