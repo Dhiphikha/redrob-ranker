@@ -1,32 +1,69 @@
-team_name: "Your Team Name"
-primary_contact:
-  name: "Your Name"
-  email: "your@email.com"
-  phone: "+91-XXXXXXXXXX"
+team_name: "HerSparkz"
 
-github_repo: "https://github.com/YOUR_USERNAME/redrob-ranker"
-sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+primary_contact:
+  name: "Dhiphikha R"
+  email: "dhiphikha23@gmail.com"
+  phone: "+91-9345061993"
+
+team_members:
+  - name: "Dhiphikha R"
+    email: "dhiphikha23@gmail.com"
+    role: "Solo Participant"
+
+github_repo: "https://github.com/dhiphikha/redrob-ranker"
+
+sandbox_link: "https://huggingface.co/spaces/dhiphikha/redrob-ranker"
+
 reproduce_command: "python rank.py candidates.jsonl submission.csv"
 
 compute:
-  platform: "Your Computer Type"
+  platform: "Windows Laptop"
   cpu_cores: 8
   ram_gb: 16
   python_version: "3.12"
-  os: "Windows/Mac/Linux"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
 
 ai_tools_used:
   - "Claude"
 
-ai_usage_summary: "Used Claude to help design the ranking algorithm and code structure."
+ai_usage_summary: |
+  Used Claude for:
+  - Algorithm design and scoring logic
+  - Code structure and best practices
+  - Debugging and optimization
+  
+  No candidate data was shared with Claude.
+  Code is my original work using AI as a tool.
 
 methodology_summary: |
-  Five-component ranking system that scores candidates on title match, 
-  skills, experience, education, and behavioral signals. The system 
-  filters out impossible profiles (honeypots) to ensure quality results.
+  Five-component ranking system for Senior AI Engineer role:
+  
+  1. Title Match (30%): Exact/related titles in career history
+     ("AI Engineer", "ML Engineer", "Senior Engineer")
+  
+  2. Skills Match (25%): Required ML/Python/Deep Learning skills
+     with proficiency level, duration multiplier, endorsement bonus
+  
+  3. Experience Years (20%): Linear scaling for 5-9 year preference
+  
+  4. Education Tier (10%): Institution prestige (Tier 1 preferred)
+  
+  5. Behavioral Signals (15%): Profile completeness, recruiter response
+     rate, search appearance, open to work flag
+  
+  Honeypot Detection: Filters impossible profiles (>50 expert skills,
+  perfect metrics, impossible dates). Tie-breaking by candidate_id.
+  Verified 0 honeypots in top 100 (0.0% rate, well below 10% threshold).
+  
+  Runtime: ~12 seconds for 100,000 candidates on CPU.
 
 declarations:
   read_submission_spec: true
   code_is_original_work: true
   no_collusion: true
+  honeypot_check_done: true
   reproduction_tested: true
