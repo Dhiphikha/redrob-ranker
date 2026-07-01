@@ -1,6 +1,5 @@
 """
 REDROB AI - PROFESSIONAL CANDIDATE RANKING SYSTEM
-Complete Full-Stack Application with Advanced Ranking
 """
 
 import streamlit as st
