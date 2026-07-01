@@ -326,7 +326,6 @@ class AdvancedRankingEngine:
 
 # ==================== SIDEBAR CONFIGURATION ====================
 with st.sidebar:
-    st.image("https://via.placeholder.com/300x80?text=Redrob+AI", use_column_width=True)
     
     st.header("⚙️ System Configuration")
     
@@ -644,7 +643,7 @@ with tab4:
     
     st.subheader("🔗 Support")
     st.write("""
-    - **GitHub**: https://github.com/YOUR_USERNAME/redrob-ranker
+    - **GitHub**: 
     - **Issues**: Report issues on GitHub
     - **Documentation**: See README.md
     """)
