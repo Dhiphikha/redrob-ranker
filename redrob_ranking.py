@@ -643,7 +643,7 @@ with tab4:
     
     st.subheader("🔗 Support")
     st.write("""
-    - **GitHub**: 
+    - **GitHub**: https://github.com/Dhiphikha/redrob-ranker/tree/main  
     - **Issues**: Report issues on GitHub
     - **Documentation**: See README.md
     """)
