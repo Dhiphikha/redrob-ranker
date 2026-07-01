@@ -12,7 +12,7 @@ team_members:
 
 github_repo: "https://github.com/Dhiphikha/redrob-ranker"
 
-sandbox_link: "https://redrob-ranker-lfrucrlnf2caq9z4hddpfj.streamlit.app/"
+sandbox_link: "https://redrob-ranker-wfaaxny7fyjbhdhfnd62f9.streamlit.app/"
 
 reproduce_command: "python rank.py candidates.jsonl submission.csv"
 
